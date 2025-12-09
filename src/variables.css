@@ -1,0 +1,7 @@
+:root {
+  --rime-fieldset-border-color: #0d1117;
+}
+
+.body--dark {
+  --rime-fieldset-border-color: #ffffff;
+}

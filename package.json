@@ -1,0 +1,41 @@
+{
+  "name": "rime-color-scheme-configurator",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.17.0",
+    "@vueuse/core": "^14.1.0",
+    "clipboard": "^2.0.11",
+    "pinia": "^3.0.4",
+    "quasar": "^2.18.6",
+    "vue": "^3.5.25",
+    "vue-i18n": "^11.2.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@quasar/vite-plugin": "^1.10.0",
+    "@types/chai": "^5.2.3",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^24.10.1",
+    "@vitejs/plugin-vue": "^6.0.2",
+    "@vue/tsconfig": "^0.8.1",
+    "chai": "^6.2.1",
+    "eslint": "^9.39.1",
+    "eslint-plugin-vue": "^10.6.2",
+    "globals": "^16.5.0",
+    "mocha": "^11.7.5",
+    "sass-embedded": "1.93.3",
+    "tsx": "^4.21.0",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.48.1",
+    "vite": "^7.2.6",
+    "vue-tsc": "^3.1.6"
+  }
+}

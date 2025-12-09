@@ -1,0 +1,71 @@
+{
+  "title": "Rime 颜色方案配置器",
+  "panel": {
+    "xgqd": "广告",
+    "vhtg": "改革",
+    "hees": "规格",
+    "hkqd": "公告",
+    "sgjg": "各个",
+    "py": "拼音"
+  },
+  "fieldset": {
+    "panel": "预览面板",
+    "options": "界面选项",
+    "info": "方案信息",
+    "default": "默认配色",
+    "candidate": "候选项配色",
+    "hilited": "高亮区域配色",
+    "selected": "选中的候选区域配色",
+    "pages": "翻页箭头配色",
+    "action": "动作"
+  },
+  "form": {
+    "platform": "平台",
+    "weasel": "小狼毫",
+    "squirrel": "鼠须管",
+    "pageBackground": "网页背景",
+    "light": "亮色",
+    "dark": "暗色",
+    "pageLanguage": "网页语言",
+    "schemeName": "配色名称",
+    "author": "作者名称",
+    "colorFormat": "颜色格式",
+    "colorSpace": "色值所用色域",
+    "textColor": "文字颜色",
+    "labelColor": "标签颜色",
+    "commentColor": "注释颜色",
+    "backColor": "背景颜色",
+    "borderColor": "边框颜色",
+    "shadowColor": "阴影颜色",
+    "preeditColor": "编辑区背景颜色",
+    "candidateTextColor": "候选项文字颜色",
+    "candidateBackColor": "候选项背景颜色",
+    "candidateBorderColor": "候选项边框颜色",
+    "candidateShadowColor": "候选项阴影颜色",
+    "hilitedTextColor": "高亮区域文字颜色",
+    "hilitedBackColor": "高亮区域背景颜色",
+    "hilitedShadowColor": "高亮区域阴影颜色",
+    "hilitedCandidateTextColor": "选中的候选区域文字颜色",
+    "hilitedCandidateLabelColor": "选中的候选区域标签颜色",
+    "hilitedCandidateCommentColor": "选中的候选区域注释颜色",
+    "markColor": "选中的候选区域标记颜色",
+    "hilitedCandidateBackColor": "选中的候选区域背景颜色",
+    "hilitedCandidateBorderColor": "选中的候选区域边框颜色",
+    "hilitedCandidateShadowColor": "选中的候选区域阴影颜色",
+    "prevpageColor": "上一页箭头颜色",
+    "nextpageColor": "下一页箭头颜色",
+    "import": "导入方案",
+    "preview": "预览结果",
+    "copy": "复制结果"
+  },
+  "message": {
+    "copy": "复制成功！",
+    "import": "导入成功！"
+  },
+  "button": {
+    "ok": "确定",
+    "cancel": "取消",
+    "copy": "复制",
+    "close": "关闭"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "title": "Rime 配色方案設定器",
+  "panel": {
+    "xgqd": "廣告",
+    "vhtg": "改革",
+    "hees": "規格",
+    "hkqd": "公告",
+    "sgjg": "各個",
+    "py": "拼音"
+  },
+  "fieldset": {
+    "panel": "預覽面板",
+    "options": "介面選項",
+    "info": "方案資訊",
+    "default": "預設配色",
+    "candidate": "候選詞配色",
+    "hilited": "編輯區高亮配色",
+    "selected": "高亮候選詞配色",
+    "pages": "翻頁箭頭配色",
+    "action": "動作"
+  },
+  "form": {
+    "platform": "平臺",
+    "weasel": "小狼毫",
+    "squirrel": "鼠須管",
+    "pageBackground": "網頁背景",
+    "light": "亮色",
+    "dark": "暗色",
+    "pageLanguage": "網頁語言",
+    "schemeName": "配色名稱",
+    "author": "作者名稱",
+    "colorFormat": "顏色格式",
+    "colorSpace": "色值所用色域",
+    "textColor": "文字色",
+    "labelColor": "序號色",
+    "commentColor": "註釋色",
+    "backColor": "背景色",
+    "borderColor": "邊框色",
+    "shadowColor": "陰影色",
+    "preeditColor": "編輯區背景色",
+    "candidateTextColor": "候選詞文字色",
+    "candidateBackColor": "候選詞背景色",
+    "candidateBorderColor": "候選詞邊框色",
+    "candidateShadowColor": "候選詞陰影色",
+    "hilitedTextColor": "編輯區高亮文字色",
+    "hilitedBackColor": "編輯區高亮背景色",
+    "hilitedShadowColor": "編輯區高亮陰影色",
+    "hilitedCandidateTextColor": "高亮候選詞文字色",
+    "hilitedCandidateLabelColor": "高亮候選詞序號色",
+    "hilitedCandidateCommentColor": "高亮候選詞註釋色",
+    "markColor": "高亮候選詞標記色",
+    "hilitedCandidateBackColor": "高亮候選詞背景色",
+    "hilitedCandidateBorderColor": "高亮候選詞邊框色",
+    "hilitedCandidateShadowColor": "高亮候選詞陰影色",
+    "prevpageColor": "上一頁箭頭色",
+    "nextpageColor": "下一頁箭頭色",
+    "import": "匯入方案",
+    "preview": "預覽結果",
+    "copy": "複製結果"
+  },
+  "message": {
+    "copy": "複製成功！",
+    "import": "匯入成功！"
+  },
+  "button": {
+    "ok": "確定",
+    "cancel": "取消",
+    "copy": "複製",
+    "close": "關閉"
+  }
+}
