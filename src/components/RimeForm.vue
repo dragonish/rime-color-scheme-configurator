@@ -165,7 +165,7 @@
       <q-btn class="col" color="primary" :label="t('form.copy')" @click="onCopyResult"></q-btn>
     </rime-fieldset>
     <rime-import-dialog v-model:visibility="importVisibility" @import="onImport"></rime-import-dialog>
-    <rime-preview-dialog v-model:visibility="previewVisibility"></rime-preview-dialog>
+    <rime-preview-dialog v-model:visibility="previewVisibility" @copy="onCopyResult"></rime-preview-dialog>
   </div>
 </template>
 
