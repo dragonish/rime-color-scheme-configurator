@@ -43,6 +43,7 @@ watch(
   () => colorStore.pageLanguage,
   newVal => {
     locale.value = newVal;
+    document.title = t('title');
   }
 );
 
@@ -52,6 +53,7 @@ onBeforeMount(() => {
   }
 
   locale.value = colorStore.pageLanguage;
+  document.title = t('title');
 });
 
 function onOpenGitHub() {
