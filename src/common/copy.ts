@@ -5,7 +5,7 @@ export function copy(text: string, container?: Element | null) {
     navigator.clipboard.writeText(text);
   } else {
     try {
-      Clipboard.copy(text, { container: container || undefined });
+      Clipboard.copy(text, { container: container || document.body });
     } catch (err) {
       console.error(err);
     }
