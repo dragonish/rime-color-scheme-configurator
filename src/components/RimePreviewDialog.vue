@@ -48,7 +48,7 @@ watch(
 );
 
 function onCopy() {
-  copy(content.value);
+  copy(content.value, document.querySelector('.rime-preview-dialog-card'));
   $q.notify({
     message: t('message.copy'),
     color: 'primary',

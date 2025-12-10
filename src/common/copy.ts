@@ -1,11 +1,11 @@
 import Clipboard from 'clipboard';
 
-export function copy(text: string) {
+export function copy(text: string, container?: Element | null) {
   if (navigator.clipboard) {
     navigator.clipboard.writeText(text);
   } else {
     try {
-      Clipboard.copy(text);
+      Clipboard.copy(text, { container: container || undefined });
     } catch (err) {
       console.error(err);
     }
