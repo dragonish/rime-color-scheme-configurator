@@ -5,6 +5,7 @@ export const LOCALSTORAGE_KEYS = {
   PLATFORM: 'rimePlatform',
   PAGE_BACKGROUND: 'rimePageBackground',
   PAGE_LANGUAGE: 'rimePageLanguage',
+  SAVED: 'rimeSaved',
 };
 
 export function isColorFormat(format: string): format is ColorFormat {

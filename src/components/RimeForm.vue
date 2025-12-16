@@ -161,9 +161,28 @@
     </rime-fieldset>
     <rime-fieldset :label="t('fieldset.action')" class="column q-gutter-y-sm">
       <q-btn class="col" color="accent" :label="t('form.import')" @click="importVisibility = true"></q-btn>
+      <q-btn class="col" color="positive" :label="t('form.save')" @click="onSave"></q-btn>
       <q-btn class="col" color="secondary" :label="t('form.preview')" @click="previewVisibility = true"></q-btn>
       <q-btn class="col" color="primary" :label="t('form.copy')" @click="onCopyResult"></q-btn>
     </rime-fieldset>
+    <rime-fieldset v-show="colorStore.saved.length > 0" :label="t('fieldset.saved')" class="column q-gutter-y-sm">
+      <q-fab
+        v-for="item in colorStore.saved"
+        :key="item.id"
+        class="col"
+        label-position="left"
+        direction="right"
+        padding="xs"
+        hide-icon
+        square
+        :label="(item.name || item.author || 'Unknown') + '_' + item.id"
+        :style="{ color: item.text_color, backgroundColor: item.back_color }"
+      >
+        <q-fab-action color="accent" padding="xs" square :label="t('button.import')" @click="onImportSaved(item.id)"></q-fab-action>
+        <q-fab-action color="negative" padding="xs" square :label="t('button.delete')" @click="onDeleteSaved(item.id)"></q-fab-action>
+      </q-fab>
+    </rime-fieldset>
+
     <rime-import-dialog v-model:visibility="importVisibility" @import="onImport"></rime-import-dialog>
     <rime-preview-dialog v-model:visibility="previewVisibility"></rime-preview-dialog>
   </div>
@@ -209,5 +228,17 @@ function onImport(text: string) {
     message: t('message.import'),
     color: 'accent',
   });
+}
+
+function onSave() {
+  colorStore.saveScheme();
+}
+
+function onDeleteSaved(id: string) {
+  colorStore.removeSavedScheme(id);
+}
+
+function onImportSaved(id: string) {
+  colorStore.importSavedSeheme(id);
 }
 </script>

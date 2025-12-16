@@ -4,10 +4,15 @@ import { LOCALSTORAGE_KEYS, isColorFormat, toYAMLString, trimQuotes } from '@/co
 import { blendHexaColors, outputColor, importColor } from '@/common/color';
 import { getLocalLanguage } from '@/locales/schema';
 
+interface SchemeSavedItem extends Partial<WeaselColorScheme & SquirrelColorScheme> {
+  id: string;
+}
+
 interface RuntimeState {
   platform: RemovableRef<InputMethodPlatform>;
   pageBackground: RemovableRef<PageBackgroundMode>;
   pageLanguage: RemovableRef<PageLanguage>;
+  saved: RemovableRef<SchemeSavedItem[]>;
 }
 
 export const useColorStore = defineStore('ColorStore', {
@@ -15,6 +20,7 @@ export const useColorStore = defineStore('ColorStore', {
     const platform = useLocalStorage<InputMethodPlatform>(LOCALSTORAGE_KEYS.PLATFORM, 'weasel');
     const pageBackground = useLocalStorage<PageBackgroundMode>(LOCALSTORAGE_KEYS.PAGE_BACKGROUND, 'light');
     const pageLanguage = useLocalStorage<PageLanguage>(LOCALSTORAGE_KEYS.PAGE_LANGUAGE, getLocalLanguage());
+    const saved = useLocalStorage<SchemeSavedItem[]>(LOCALSTORAGE_KEYS.SAVED, []);
 
     return {
       name: '',
@@ -51,11 +57,13 @@ export const useColorStore = defineStore('ColorStore', {
       platform,
       pageBackground,
       pageLanguage,
+      saved,
     };
   },
   getters: {
     isWeaselPlatform: state => state.platform === 'weasel',
     isSquirrelPlatform: state => state.platform === 'squirrel',
+
     colorFormat(): ColorFormat {
       return this.isWeaselPlatform ? this.color_format : 'abgr';
     },
@@ -383,6 +391,80 @@ export const useColorStore = defineStore('ColorStore', {
         color_format: 'abgr',
         color_space: 'srgb',
       });
+    },
+
+    /**
+     * 暂存当前方案
+     */
+    saveScheme() {
+      const savedItem: SchemeSavedItem = {
+        id: Date.now().toString(),
+      };
+
+      const keys = Object.keys(this.$state);
+      for (const key of keys) {
+        switch (key) {
+          case 'name':
+          case 'author':
+          case 'color_space':
+          case 'color_format':
+          case 'text_color':
+          case 'label_color':
+          case 'comment_text_color':
+          case 'back_color':
+          case 'border_color':
+          case 'candidate_text_color':
+          case 'candidate_back_color':
+          case 'hilited_text_color':
+          case 'hilited_back_color':
+          case 'hilited_candidate_text_color':
+          case 'hilited_comment_text_color':
+          case 'hilited_candidate_back_color':
+          case 'shadow_color':
+          case 'candidate_border_color':
+          case 'candidate_shadow_color':
+          case 'hilited_label_color':
+          case 'hilited_mark_color':
+          case 'hilited_shadow_color':
+          case 'hilited_candidate_border_color':
+          case 'hilited_candidate_shadow_color':
+          case 'prevpage_color':
+          case 'nextpage_color':
+          case 'preedit_back_color':
+          case 'hilited_candidate_label_color':
+            if (this.$state[key]) {
+              Object.assign(savedItem, { [key]: this.$state[key] });
+            }
+            break;
+        }
+      }
+
+      this.saved.push(savedItem);
+    },
+
+    /**
+     * 删除暂存的方案
+     * @param id 方案的唯一标识符
+     */
+    removeSavedScheme(id: string) {
+      const index = this.saved.findIndex(item => item.id === id);
+      if (index > -1) {
+        this.saved.splice(index, 1);
+      }
+    },
+
+    /**
+     * 从暂存的方案导入
+     * @param id 方案的唯一标识符
+     */
+    importSavedSeheme(id: string) {
+      for (const item of this.saved) {
+        if (item.id === id) {
+          this.restoreScheme();
+          this.$patch(item);
+          break;
+        }
+      }
     },
   },
 });

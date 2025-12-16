@@ -17,7 +17,8 @@
     "hilited": "高亮区域配色",
     "selected": "选中的候选区域配色",
     "pages": "翻页箭头配色",
-    "action": "动作"
+    "action": "动作",
+    "saved": "暂存方案"
   },
   "form": {
     "platform": "平台",
@@ -56,7 +57,8 @@
     "nextpageColor": "下一页箭头颜色",
     "import": "导入方案",
     "preview": "预览结果",
-    "copy": "复制结果"
+    "copy": "复制结果",
+    "save": "暂存方案"
   },
   "message": {
     "copy": "复制成功！",
@@ -66,6 +68,8 @@
     "ok": "确定",
     "cancel": "取消",
     "copy": "复制",
-    "close": "关闭"
+    "close": "关闭",
+    "import": "导入",
+    "delete": "删除"
   }
 }

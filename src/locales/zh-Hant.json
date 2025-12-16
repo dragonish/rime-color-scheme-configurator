@@ -17,7 +17,8 @@
     "hilited": "編輯區高亮配色",
     "selected": "高亮候選詞配色",
     "pages": "翻頁箭頭配色",
-    "action": "動作"
+    "action": "動作",
+    "saved": "暫存方案"
   },
   "form": {
     "platform": "平臺",
@@ -56,7 +57,8 @@
     "nextpageColor": "下一頁箭頭色",
     "import": "匯入方案",
     "preview": "預覽結果",
-    "copy": "複製結果"
+    "copy": "複製結果",
+    "save": "暫存方案"
   },
   "message": {
     "copy": "複製成功！",
@@ -66,6 +68,8 @@
     "ok": "確定",
     "cancel": "取消",
     "copy": "複製",
-    "close": "關閉"
+    "close": "關閉",
+    "import": "匯入",
+    "delete": "刪除"
   }
 }
