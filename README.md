@@ -2,7 +2,8 @@
 
 Rime 颜色方案配置器，用于配置小狼毫与鼠须管的颜色方案。
 
-[Demo](https://cucumber7748.serv00.net/)
+- [在线 Demo1](https://rime.dragonish.de/)
+- [在线 Demo2](https://cucumber7748.serv00.net/)
 
 ## 预览
 
