@@ -3,3 +3,5 @@ allowBuilds:
   esbuild: true
 onlyBuiltDependencies:
   - esbuild
+patchedDependencies:
+  '@volar/typescript@2.4.28': patches/@volar__typescript@2.4.28.patch

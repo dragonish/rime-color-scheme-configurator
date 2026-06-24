@@ -1,0 +1,13 @@
+diff --git a/lib/node/decorateProgram.js b/lib/node/decorateProgram.js
+index 3451184c375ef4d35c041eae91df669d5d082927..eeffa4e7bec4cdc9557f5fb1452027cc915f8c4d 100644
+--- a/lib/node/decorateProgram.js
++++ b/lib/node/decorateProgram.js
+@@ -70,7 +70,7 @@ function decorateProgram(language, program) {
+             return getBindAndCheckDiagnostics(actualSourceFile, cancellationToken)
+                 .map(d => (0, transform_1.transformDiagnostic)(language, d, program, true))
+                 .filter(d => !!d)
+-                .filter(d => !serviceScript || language.scripts.get(d.file.fileName) === sourceScript);
++                .filter(d => !serviceScript || !d.file || language.scripts.get(d.file.fileName) === sourceScript);
+         }
+     };
+     // fix https://github.com/vuejs/language-tools/issues/4099 with `incremental`
