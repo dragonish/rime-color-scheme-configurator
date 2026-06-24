@@ -5,7 +5,15 @@
         <div>{{ t('title') }}</div>
         <div class="text-italic" style="font-size: 12px">by dragonish</div>
         <q-space />
-        <q-btn dense flat class="cursor-pointer" :icon="fabGithub" @click="onOpenGitHub"></q-btn>
+        <q-btn
+          dense
+          flat
+          round
+          class="cursor-pointer"
+          :icon="fabGithub"
+          target="_blank"
+          href="https://github.com/dragonish/rime-color-scheme-configurator"
+        ></q-btn>
       </q-bar>
     </q-header>
     <q-page-container>
@@ -36,7 +44,7 @@ watch(
   () => colorStore.pageBackground,
   newVal => {
     $q.dark.set(newVal === 'dark');
-  }
+  },
 );
 
 watch(
@@ -44,7 +52,7 @@ watch(
   newVal => {
     locale.value = newVal;
     document.title = t('title');
-  }
+  },
 );
 
 onBeforeMount(() => {
@@ -55,8 +63,4 @@ onBeforeMount(() => {
   locale.value = colorStore.pageLanguage;
   document.title = t('title');
 });
-
-function onOpenGitHub() {
-  window.open('https://github.com/dragonish/rime-color-scheme-configurator', '_blank');
-}
 </script>
